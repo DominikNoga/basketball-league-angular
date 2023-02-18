@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IABL - International Amateur Basketball League</title>
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="shortcut icon" href="src/img/bp-web-icon.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/00f2d7352e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header" ng-include="'components/header.html'"></header>
+    <main class="main-container" ng-view>
+
+    </main>
+    <footer class="footer" ng-include="'components/footer.html'"></footer>
+    <!-- Scripts -->
+    <script src="app/lib/angular.min.js"></script>
+    <script src="app/lib/angular-route.min.js"></script>
+    <script src="app/lib/angular-animate.min.js"></script>
+    <script src="./app/app.js"></script>
+</body>
+</html>
