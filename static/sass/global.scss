@@ -12,5 +12,15 @@ a{
     color: inherit;
 }
 .main-container{
+    margin: 2rem auto 4rem auto;
     min-height: 62vh;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    text-transform: none;
+}
+ul{
+    list-style-type:none;
+    padding: 0;
+    margin: 0;
 }

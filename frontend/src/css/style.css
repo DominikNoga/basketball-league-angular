@@ -15,12 +15,22 @@ a {
 }
 
 .main-container {
+  margin: 2rem auto 4rem auto;
   min-height: 62vh;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  text-transform: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 .header {
   width: 100%;
-  padding-bottom: 1rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -85,6 +95,9 @@ ul {
   margin-right: 1rem;
 }
 
+.nav-item {
+  position: relative;
+}
 .nav-item:hover .sub-menu {
   scale: 1;
   z-index: 5;
@@ -122,12 +135,14 @@ ul {
 .sub-menu {
   display: flex;
   list-style-type: none;
-  z-index: 1200;
+  z-index: 3;
   position: absolute;
   flex-direction: column;
+  font-size: 17px;
+  width: 100%;
   gap: 0.5rem;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
-  transition: scale 0.2s linear;
+  transition: scale 0.15s linear;
   scale: 0;
   transform-origin: top center;
   background-color: white;
@@ -144,10 +159,6 @@ ul {
   opacity: 0.9;
   cursor: pointer;
   background-color: rgb(232, 221, 221);
-}
-
-.logout-icon {
-  display: none;
 }
 
 .footer {
@@ -191,4 +202,231 @@ ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.btn, .arrow-left, .arrow-right, .logout-btn, .from-submit-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  border: none;
+}
+.btn:hover, .arrow-left:hover, .arrow-right:hover, .logout-btn:hover, .from-submit-btn:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.from-submit-btn {
+  background-color: #17366e;
+  color: white;
+}
+
+.logout-btn {
+  background-color: transparent;
+  border: none;
+  transition: box-shadow 0.2s linear;
+  font-size: inherit;
+}
+.logout-btn:hover {
+  box-shadow: 0 0 4px #FC7404;
+}
+
+.arrow-left, .arrow-right {
+  height: min-content;
+  font-size: 30px;
+  background-color: transparent;
+  padding: 0;
+  transition: opacity 0.2s ease-out;
+}
+.arrow-left:hover, .arrow-right:hover {
+  opacity: 0.7;
+}
+
+.auth-form {
+  text-transform: none;
+  background-color: white;
+  height: fit-content;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  width: max(600px, 40%);
+  gap: 1rem;
+}
+
+.form-group {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr;
+  align-items: center;
+}
+.form-group label {
+  font-size: 17px;
+}
+.form-group .check {
+  justify-self: left;
+}
+
+.auth-form-input {
+  justify-self: left;
+  width: 100%;
+  padding: 0.5rem 0.5rem;
+  font-size: 17px;
+}
+
+.latest-games {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  height: min-content;
+  font-size: 1.2rem;
+}
+
+.games-slider {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+}
+
+.game-tile {
+  position: relative;
+  padding: 1rem;
+  background-color: white;
+  border: solid 2px #17366e;
+  box-shadow: 0 0 0.1rem rgba(0, 0, 0, 0.3);
+  min-width: 220px;
+}
+
+.game-section {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  column-gap: 0.5rem;
+  row-gap: 0.5rem;
+}
+.game-section .teamScore {
+  justify-self: center;
+}
+.game-section b {
+  grid-column-start: 2;
+}
+
+.game-time {
+  transform: translate(-1rem, -1rem);
+  background-color: #17366e;
+  color: white;
+  font-size: 1rem;
+  padding: 0.1rem 0 0.1rem 0.4rem;
+  width: calc(100% + 2rem);
+}
+
+.game-venue {
+  transform: translate(-1rem, 1rem);
+  width: calc(100% + 2rem);
+  background-color: whitesmoke;
+  text-align: center;
+  font-size: 1rem;
+  padding: 0.1rem 0;
+}
+
+.calendar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.section-title {
+  text-align: center;
+}
+
+.calendar-buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.day-tiles {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 1rem;
+  justify-items: center;
+}
+
+.day-tile {
+  aspect-ratio: 1/1;
+  width: 85%;
+  background-color: white;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.3);
+}
+
+.main-container.ng-enter {
+  transition: opacity 0.5s ease-in-out;
+  will-change: opacity;
+  opacity: 0;
+}
+
+.main-container.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+.days-backwards {
+  animation: decMonth 0.4s both ease-in-out;
+}
+
+.days-forwards {
+  animation: incMonth 0.4s both ease-in-out;
+}
+
+@keyframes decMonth {
+  0% {
+    transform: translateX(-200%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes incMonth {
+  0% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.loader {
+  background-color: rgba(255, 255, 255, 0.6);
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-ball {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  animation: bouncing-ball 0.9s ease-in-out infinite alternate;
+}
+
+@keyframes bouncing-ball {
+  from {
+    transform: scaleX(1) scaleY(1) translateY(-200%);
+  }
+  to {
+    transform: scaleX(1.1) scaleY(0.85) translateY(0);
+  }
 }

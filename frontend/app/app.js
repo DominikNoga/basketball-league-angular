@@ -1,5 +1,4 @@
-let myApp = angular.module('myApp', ['ngRoute', 'ngAnimate'])
-
+const myApp = angular.module('myApp', ['ngRoute', 'ngAnimate', 'schedule', 'auth', 'home'])
 myApp.config(['$routeProvider', function($routeProvider){
     $routeProvider
         .when("/home", {
@@ -24,7 +23,8 @@ myApp.config(['$routeProvider', function($routeProvider){
             templateUrl:'views/standings.html'
         })
         .when("/schedule", {
-            templateUrl:'views/schedule.html'
+            templateUrl:'views/schedule.html',
+            controller:"ScheduleCtrl"
         })
         .when("/stats", {
             templateUrl:'views/stats.html'
@@ -33,3 +33,12 @@ myApp.config(['$routeProvider', function($routeProvider){
             redirectTo: '/notFound'
         })
 }]);
+myApp.controller("MainController", ["$scope","$route", function($scope, $route){
+    localStorage.getItem("user") !== undefined ? $scope.isLogged = true : $scope.isLogged = false;
+    $scope.logout = () =>{
+        localStorage.removeItem("user");
+        $scope.isLogged = false;
+        $route.reload()
+    }
+    
+}])

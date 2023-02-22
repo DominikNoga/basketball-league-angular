@@ -1,0 +1,33 @@
+<div class="loader" ng-show="isLoading">
+    <img class="loading-ball" ng-src="src/img/ball.png" alt="" />
+</div>
+<form ng-submit="addUser($event, fname, lname, email, password, password2);" method="post" enctype="multipart/form-data" class="auth-form">
+    <div class="form-group">
+        <label>First Name</label>
+        <input type="text" class="auth-form-input" ng-model="fname" placeholder="First Name..." required>
+    </div>
+    <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" class="auth-form-input" ng-model="lname" placeholder="Last Name..." required>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" class="auth-form-input" ng-model="email" placeholder="Email..." required>
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="auth-form-input" ng-model="password" placeholder="Password..." required>
+    </div>
+    <div class="form-group">
+        <label>Repeat Password</label>
+        <input type="password" class="auth-form-input" ng-model="password2" placeholder="Repeat Password..." required>
+    </div>
+    <div class="form-group">
+        <label for="">I accept the statue</label>
+        <input type="checkbox" ng-model="statueAccept" class="check" required>
+    </div>
+    <button class="from-submit-btn">Sign Up</button>
+    <section class="error-messages">
+        {{errorMessage}}
+    </section>
+</form>

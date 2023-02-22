@@ -1,1 +1,21 @@
-jutro
+<section class="calendar">
+    <h1 class="section-title">
+        {{this.dm.currentDate.toLocaleString('eng', { 
+            month: 'long',
+            year:'numeric'
+        })}}
+    </h1>
+    <section class="calendar-buttons">
+        <button class="btn-calendar-back" ng-click="dm.changeDate(-1);animateWithDaysBackwards();"><i class="fa-solid fa-arrow-left-long"></i></button>
+        <div class="datepicker">
+            <label for="calendar-datepicker"><i class="fa-regular fa-calendar-days"></i></label>
+            <input type="date" ng-change="dm.setDate(date)" value="{{dm.currentDate}}" id="calendar-datepicker" ng-model="date">
+        </div>
+        <button ng-click="dm.changeDate(1);animateWithDaysForwards();" class="btn-calendar-forward"><i class="fa-solid fa-arrow-right-long"></i></button>
+    </section>
+    <section class="day-tiles">
+        <div class="day-tile" ng-repeat="day in dm.days track by $index">
+            {{day}}
+        </div>
+    </section>
+</section>
