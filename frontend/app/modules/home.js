@@ -19,7 +19,7 @@ home.directive("gameTile",[function(){
             replace:true, // it will replace our custom tag with the first tag matched inside template
         }
 }]);
-home.controller("HomeController", ["$scope", "$q", "apiService","$timeout", function($scope, $q, apiService, $timeout){
+home.controller("HomeController", ["$scope", "$q", "apiService","$timeout", function($scope, $q, apiService){
     $scope.startPoint = 0;
     $scope.endPoint = Math.floor(window.innerWidth/tileWidth);
     window.addEventListener("resize", () =>{
@@ -57,3 +57,25 @@ home.controller("HomeController", ["$scope", "$q", "apiService","$timeout", func
     };
       
 }]);
+
+home.controller("LeagueTable", ["$scope", "apiService", "$q",function($scope, apiService, $q){
+    $scope.currentLeague = 1;
+    apiService.getTeams()
+        .then(({data: teams}) =>{
+            const teamsPoints = teams.map(team =>{
+                return {
+                    name:team.name,
+                    league: team.lague,
+                    wins,
+                    losses,
+                    points
+                }
+            }) 
+            $scope.allTeams = teamsPoints;
+            $scope.setCurrentTable($scope.currentLeague);
+        })
+    $scope.setCurrentTable = (league) =>{
+        $scope.currentLeagueTable = $scope.allTeams.filter(team => team.league === league)
+            .sort((t1, t2) => t1.t1Points > t2.points)
+    }
+}])
