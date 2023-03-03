@@ -1,10 +1,5 @@
 @use 'global.scss';
-@use 'components/header.scss';
-@use 'components/footer.scss';
-@use 'components/buttons.scss';
 @use 'views/auth.scss';
 @use 'views/home.scss';
+@use 'views/main.scss';
 @use 'views/schedule.scss';
-@use 'components/loader.scss';
-@use 'components/phone-nav.scss';
-@use 'components/burger.scss';

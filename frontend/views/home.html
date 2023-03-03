@@ -1,1 +1,16 @@
 <section class="games-slider" ng-include="'components/games-slider.html'"></section>
+<section class="stats-and-standings">
+    <section class="league-table-section" ng-controller="LeagueTable">
+        <section class="choose-league">
+            <button class="league-choose-btn" ng-repeat="league in ['I League', 'II League', 'III league']" 
+                ng-click="setCurrentTable($index + 1)">
+                {{league}}
+            </button>
+        </section>
+        <ol class="league-table">
+            <li class="league-table-row" ng-repeat="team in currentTeams">
+                {{team.name}} 
+            </li>
+        </ol>
+    </section>
+</section>

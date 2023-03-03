@@ -65,17 +65,17 @@ home.controller("LeagueTable", ["$scope", "apiService", "$q",function($scope, ap
             const teamsPoints = teams.map(team =>{
                 return {
                     name:team.name,
-                    league: team.lague,
-                    wins,
-                    losses,
-                    points
+                    league: team.league,
+                    wins: team.wins,
+                    losses: team.losses,
+                    points: team.points
                 }
             }) 
             $scope.allTeams = teamsPoints;
             $scope.setCurrentTable($scope.currentLeague);
         })
     $scope.setCurrentTable = (league) =>{
-        $scope.currentLeagueTable = $scope.allTeams.filter(team => team.league === league)
+        $scope.currentTeams = $scope.allTeams.filter(team => team.league === league)
             .sort((t1, t2) => t1.t1Points > t2.points)
     }
 }])
