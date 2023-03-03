@@ -1,0 +1,101 @@
+@use '../variables/colors' as c;
+@use '../mixins/mixins' as mix;
+.games-slider{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-gap: 1rem;
+    align-items: center;
+    width: 100%;
+}
+.game-tiles{
+    display: flex;
+    flex-direction: row;
+    gap:1rem;
+}
+.game-tile{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    font-size: .9rem;
+    gap:.5rem;
+    background-color: white;
+    border: solid 2px c.$background2;
+    box-shadow: 0 0 .1rem rgba(black, .3);
+    transition: box-shadow .3s ease-out;
+    &:hover{
+        cursor: pointer;
+        box-shadow: 0 0 .4rem rgba(black, .7);
+    }
+}
+.game-tile.ng-enter{
+    transition: scale .3s ease-in-out;
+    will-change: scale;
+    scale:0;
+}
+.game-tile.ng-enter.ng-enter-active{
+    scale:1;
+}
+.game-tile.ng-leave{
+    transition: scale .3s ease-in-out;
+    will-change: scale;
+    scale:0;
+}
+.game-tile.ng-enter.ng-leave-active{
+    scale:1;
+}
+.game-section{
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content:space-between;
+    column-gap: .5rem;
+    row-gap: .5rem;
+    .teamScore{
+        justify-self: center;
+    }
+    b{
+        grid-column-start: 2;
+        font-size: 18px;
+    }
+}
+.game-time{
+    background-color: c.$background2;
+    color:white;
+    font-size:1rem;
+    padding: .1rem 0 .1rem .4rem;
+}
+.game-venue{
+    background-color: c.$main-color;
+    text-align: center;
+    font-size: 1rem;
+    padding: .1rem 0;
+}
+.slide-left{
+    animation: slideTilesLeft .4s ease-out backwards;
+}
+.slide-right{
+    animation: slideTilesRight .4s ease-out backwards;
+}
+button:disabled{
+    &:hover{
+        cursor:default;
+        opacity: inherit;
+    }
+}
+$slideSize: 120%;
+@keyframes slideTilesRight{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform:translateX($slideSize)
+    }
+}
+@keyframes slideTilesLeft{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform:translateX(-$slideSize)
+    }
+}

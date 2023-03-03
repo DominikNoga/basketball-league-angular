@@ -1,0 +1,85 @@
+<div class="burger" ng-click="toggleBurgerAnimation()">
+    <div class="bar top" 
+        ng-class="{'top-animated': navOpen, 'top-animated-reverse':!navOpen}">
+    </div>
+    <div class="bar center"
+        ng-class="{'center-animated': navOpen, 'center-animated-reverse':!navOpen}">
+    </div>
+    <div class="bar bottom"
+        ng-class="{'bottom-animated': navOpen, 'bottom-animated-reverse':!navOpen}">
+    </div>
+</div>
+<ul class="nav-list" ng-show="navOpen" ng-if="navOpen">
+    <li class="nav-item">
+        <a href="/frontend/#!/home" class="nav-link"><i class="fa-solid fa-house"></i>Home</a>
+    </li>
+    <li class="nav-item">
+        <span class="nav-link"><i class="fa-solid fa-basketball"></i>teams</span>
+        <ul class="sub-menu">
+            <li class="sub-menu-item">
+                <a href="/frontend/#!/teams?league=1" class="sub-menu-link">I League</a>
+            </li>
+            <li class="sub-menu-item">
+                <a href="/frontend/#!/teams?league=2" class="sub-menu-link">II League</a>
+            </li>
+            <li class="sub-menu-item">
+                <a href="/frontend/#!/teams?league=3" class="sub-menu-link">III League </a>
+            </li>
+        </ul>
+    </li>
+    <li class="nav-item">
+        <span class="nav-link"><i class="fa-solid fa-ranking-star"></i>Standings</span>
+        <ul class="sub-menu">
+            <li class="sub-menu-item">
+                <a href="/frontend/#!/standings?league=1" class="sub-menu-link">I League</a>
+            </li>
+            <li class="sub-menu-item">
+                <a href="/frontend/#!/standings?league=2" class="sub-menu-link">II League</a>
+            </li>
+            <li class="sub-menu-item">
+                <a href="/frontend/#!/standings?league=3" class="sub-menu-link">III League </a>
+            </li>
+        </ul>
+    </li>
+    <li class="nav-item">
+        <span class="nav-link"><i class="fa-solid fa-calendar-days"></i>Schedule</span>
+        <ul class="sub-menu">
+            <li class="sub-menu-item"  ng-show="isLogged">
+                <a href="/frontend/#!/schedule?my=true" class="sub-menu-link">My Schedule</a>
+            </li>
+            <li class="sub-menu-item">
+                <a href="/frontend/#!/schedule?league=true" class="sub-menu-link">League</a>
+            </li>
+            
+        </ul>
+    </li>
+    <li class="nav-item">
+        <span class="nav-link"><i class="fa-solid fa-chart-simple"></i>Stats</span>
+        <ul class="sub-menu">
+            <li class="sub-menu-item">
+                <a href="/frontend/#!/stats?stats=team" class="sub-menu-link">Team</a>
+            </li>
+            <li class="sub-menu-item">
+                <a href="/frontend/#!/stats?stats=player" class="sub-menu-link">Player</a>
+            </li>
+        </ul>
+    </li>
+    <li class="nav-item" ng-hide="isLogged">
+        <a href="/frontend/#!/register" class="nav-link">
+            <i class="fa-solid fa-user-plus"></i>
+            Sign Up
+        </a>
+    </li>
+    <li class="nav-item" ng-hide="isLogged">
+        <a href="/frontend/#!/login" class="nav-link">
+            <i class="fa-solid fa-user"></i>
+            Sign In
+        </a>
+    </li>
+    <li class="nav-item logout-icon" ng-show="isLogged">           
+        <button class="logout-btn" ng-click="logout()">
+            <i title="Logout" class="fa-solid fa-right-from-bracket "></i>
+            Logout
+        </button>   
+    </li>
+</ul>

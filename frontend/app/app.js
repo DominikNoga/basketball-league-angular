@@ -1,4 +1,4 @@
-const myApp = angular.module('myApp', ['ngRoute', 'ngAnimate', 'schedule', 'auth', 'home'])
+const myApp = angular.module('myApp', ['ngRoute', 'ngAnimate', 'schedule', 'auth', 'home', 'nav'])
 myApp.config(['$routeProvider', function($routeProvider){
     $routeProvider
         .when("/home", {
@@ -12,9 +12,6 @@ myApp.config(['$routeProvider', function($routeProvider){
         .when("/login", {
             templateUrl:'views/login.html',
             controller: 'AuthController'
-        })
-        .when("/notFound", {
-            templateUrl:'views/notFound.html'
         })
         .when("/leagues", {
             templateUrl:'views/leagues.html'
@@ -30,15 +27,31 @@ myApp.config(['$routeProvider', function($routeProvider){
             templateUrl:'views/stats.html'
         })
         .otherwise({
-            redirectTo: '/notFound'
+            redirectTo: '/home'
         })
 }]);
-myApp.controller("MainController", ["$scope","$route", function($scope, $route){
+myApp.factory('apiService', function($http) {
+    const apiService = {
+        getGames: function(){
+            return $http.get(`${basicUrl}/games`)
+                
+        },
+        getTeams: function(){
+            return $http.get(`${basicUrl}/teams`)
+        },
+        getTeam: function(id){
+            return $http.get(`${basicUrl}/teams/${id}`)
+        }
+    }
+    return apiService;
+})
+myApp.controller("MainController", ["$scope", "$location", function($scope, $location){
     localStorage.getItem("user") !== undefined ? $scope.isLogged = true : $scope.isLogged = false;
+    // why do i have to restart after user is logged in?
     $scope.logout = () =>{
         localStorage.removeItem("user");
         $scope.isLogged = false;
-        $route.reload()
+        $location.path("/login");
     }
     
 }])

@@ -1,0 +1,25 @@
+<div class="game-tile">
+    <div class="game-time">
+        {{game.gameDate.toLocaleString('pl', { 
+            day:'numeric',
+            month: 'numeric',
+            year:'numeric',
+            hour:'numeric',
+            minute:'numeric'
+        });}}
+    </div>
+    <section class="game-section">
+        <b>Score</b>
+        <span class="team">
+            {{game.team1}}
+        </span>
+        <span class="teamScore">{{ game.t1Points }}</span>
+        <span class="team">
+            {{game.team2}}
+        </span>
+        <span class="teamScore">{{ game.t2Points }}</span>
+    </section>
+    <div class="game-venue">
+        {{game.venue}}
+    </div>
+</div>
