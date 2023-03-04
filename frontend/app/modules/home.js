@@ -76,6 +76,7 @@ home.controller("LeagueTable", ["$scope", "apiService", "$q",function($scope, ap
         })
     $scope.setCurrentTable = (league) =>{
         $scope.currentTeams = $scope.allTeams.filter(team => team.league === league)
-            .sort((t1, t2) => t1.t1Points > t2.points)
+            .sort((t1, t2) => t1.wins < t2.wins)
+        $scope.currentLeague = league;
     }
 }])

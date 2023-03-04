@@ -7,7 +7,7 @@
     color:$color;
 }
 
-@mixin addPseudo($name: 'before', $pos:absolute,$top:0,$left:0, $width:100%, $height:2px, $bc, $display:block){
+@mixin addPseudo($name: 'before', $pos:absolute,$top:0,$left:0, $width:100%, $height:0px, $bc, $display:block){
     &:#{$name}{
         content: '';
         position: $pos;

@@ -55,3 +55,9 @@ myApp.controller("MainController", ["$scope", "$location", function($scope, $loc
     }
     
 }])
+myApp.controller('RouteController', ['$scope', '$location', function($scope, $location) {
+    $scope.currentPage = $location.path().slice(1);
+    $scope.setActive = () =>{
+        $scope.currentPage = $location.path().slice(1);
+    }
+}])

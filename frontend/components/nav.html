@@ -1,6 +1,6 @@
-<ul class="nav-list-left">
+<ul class="nav-list-left" ng-controller="RouteController">
     <li class="nav-item">
-        <a href="/frontend/#!/home" class="nav-link"><i class="fa-solid fa-house"></i>Home</a>
+        <a href="/frontend/#!/home" class="nav-link" ng-class="{'nav-link-active':currentPage === 'home'}" ng-click="setActive()"><i class="fa-solid fa-house"></i>Home</a>
     </li>
     <li class="nav-item">
         <span class="nav-link"><i class="fa-solid fa-basketball"></i>teams</span>
