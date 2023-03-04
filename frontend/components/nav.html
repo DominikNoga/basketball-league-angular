@@ -3,55 +3,16 @@
         <a href="/frontend/#!/home" class="nav-link" ng-class="{'nav-link-active':currentPage === 'home'}" ng-click="setActive()"><i class="fa-solid fa-house"></i>Home</a>
     </li>
     <li class="nav-item">
-        <span class="nav-link"><i class="fa-solid fa-basketball"></i>teams</span>
-        <ul class="sub-menu">
-            <li class="sub-menu-item">
-                <a href="/frontend/#!/teams?league=1" class="sub-menu-link">I League</a>
-            </li>
-            <li class="sub-menu-item">
-                <a href="/frontend/#!/teams?league=2" class="sub-menu-link">II League</a>
-            </li>
-            <li class="sub-menu-item">
-                <a href="/frontend/#!/teams?league=3" class="sub-menu-link">III League </a>
-            </li>
-        </ul>
+        <a href="/frontend/#!/teams" class="nav-link"><i class="fa-solid fa-basketball"></i>teams</a>
     </li>
     <li class="nav-item">
-        <span class="nav-link"><i class="fa-solid fa-ranking-star"></i>Standings</span>
-        <ul class="sub-menu">
-            <li class="sub-menu-item">
-                <a href="/frontend/#!/standings?league=1" class="sub-menu-link">I League</a>
-            </li>
-            <li class="sub-menu-item">
-                <a href="/frontend/#!/standings?league=2" class="sub-menu-link">II League</a>
-            </li>
-            <li class="sub-menu-item">
-                <a href="/frontend/#!/standings?league=3" class="sub-menu-link">III League </a>
-            </li>
-        </ul>
+        <a href="/frontend/#!/standings" class="nav-link"><i class="fa-solid fa-ranking-star"></i>Standings</a>
     </li>
     <li class="nav-item">
-        <span class="nav-link"><i class="fa-solid fa-calendar-days"></i>Schedule</span>
-        <ul class="sub-menu">
-            <li class="sub-menu-item"  ng-show="isLogged">
-                <a href="/frontend/#!/schedule?my=true" class="sub-menu-link">My Schedule</a>
-            </li>
-            <li class="sub-menu-item">
-                <a href="/frontend/#!/schedule?league=true" class="sub-menu-link">League</a>
-            </li>
-            
-        </ul>
+        <a href="/frontend/#!/schedule" class="nav-link"><i class="fa-solid fa-calendar-days"></i>Schedule</a>
     </li>
     <li class="nav-item">
-        <span class="nav-link"><i class="fa-solid fa-chart-simple"></i>Stats</span>
-        <ul class="sub-menu">
-            <li class="sub-menu-item">
-                <a href="/frontend/#!/stats?stats=team" class="sub-menu-link">Team</a>
-            </li>
-            <li class="sub-menu-item">
-                <a href="/frontend/#!/stats?stats=player" class="sub-menu-link">Player</a>
-            </li>
-        </ul>
+        <a href="/frontend/#!/stats" class="nav-link"><i class="fa-solid fa-chart-simple"></i>Stats</a>
     </li>
 
 </ul>
