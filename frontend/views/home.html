@@ -5,20 +5,20 @@
             <button ng-repeat="league in ['I League', 'II League', 'III league']" 
                 ng-click="setCurrentTable($index + 1)"
                 class="league-choose-btn"
-                ng-class="{'current': currentLeague === $index + 1}"
+                ng-class="{'current-league': currentLeague === $index + 1}"
                 >
                 {{league}}
             </button>
         </section>
         <div class="league-table">
-            <div class="league-table-row">
+            <div class="league-table-row-title row-dark">
                 <span>Place</span>
                 <span>Team</span>
                 <span>games</span>
                 <span>w-l</span>
                 <span>points</span>
             </div>
-            <div class="league-table-row" ng-repeat="team in currentTeams">
+            <div class="league-table-row" ng-repeat="team in currentTeams" ng-class="{'row-dark': $index%2!==0}">
                 <span>{{$index + 1 }}</span>
                 <span>{{team.name}} </span>
                 <span>{{team.wins + team.losses}}</span>

@@ -46,6 +46,7 @@ myApp.factory('apiService', function($http) {
     return apiService;
 })
 myApp.controller("MainController", ["$scope", "$location", function($scope, $location){
+    
     localStorage.getItem("user") !== undefined ? $scope.isLogged = true : $scope.isLogged = false;
     // why do i have to restart after user is logged in?
     $scope.logout = () =>{
@@ -55,9 +56,10 @@ myApp.controller("MainController", ["$scope", "$location", function($scope, $loc
     }
     
 }])
-myApp.controller('RouteController', ['$scope', '$location', function($scope, $location) {
+myApp.controller('RouteController', ['$scope', '$location', function($scope, $location, $timeout) {
     $scope.currentPage = $location.path().slice(1);
-    $scope.setActive = () =>{
+    $scope.$on('$locationChangeSuccess', function() {
         $scope.currentPage = $location.path().slice(1);
-    }
+    });
+    
 }])
