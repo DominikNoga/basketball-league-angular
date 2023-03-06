@@ -729,3 +729,7 @@ ul {
     opacity: 1;
   }
 }
+.standings-section{
+  width: max(70%, 400px);
+  margin: 2rem auto;
+}
