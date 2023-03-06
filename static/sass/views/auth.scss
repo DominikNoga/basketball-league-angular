@@ -1,0 +1,41 @@
+@use '../mixins/mixins' as mix;
+.auth-form{
+    text-transform: none;
+    background-color: white;
+    height: fit-content;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    width: max(500px, 40%);
+    gap: 1rem;
+    
+}
+.form-group{
+    display: grid;
+    grid-template-columns: .5fr 1.5fr;
+    align-items: center;
+    label{
+        font-size: 17px;
+    }
+    .check{
+        justify-self: left;
+    }
+}
+.auth-form-input{
+    justify-self: left;
+    width: 100%;
+    padding: .5rem .5rem;
+    font-size: 17px; 
+}
+@media screen and (max-width: 600px){
+    .auth-form{
+        width: min(95%, 500px);
+    }
+    .form-group{
+        grid-template-columns: 1fr;
+        label{
+            display: none;
+        }
+    }
+}

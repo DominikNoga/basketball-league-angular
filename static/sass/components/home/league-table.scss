@@ -1,0 +1,55 @@
+@use '../../variables/colors' as c;
+
+.league-table-section{
+    margin-top: 5rem;
+    // border: solid 4px black;
+    border-radius: 1rem;
+    padding: .5rem;
+}
+.choose-league{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.league-table{
+    display: flex;
+    flex-direction: column;
+}
+.league-table-row{
+    background-color: white;
+    display: grid;
+    border: 1px solid black;
+    grid-template-columns: 1fr 2fr repeat(3, 1fr);
+    padding: .5rem;
+    // border-radius: .5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition: all .3s;
+    span{
+        padding:0 2px;
+    }
+    &:hover{
+        cursor: pointer;
+        opacity: .9;
+        color: orange;
+    }
+}
+.league-table-row-title{
+    @extend .league-table-row;
+    border: 3px solid black;
+    transition: none;
+    &:hover{
+        cursor: default;
+        color:white;
+        opacity: 1;
+    }
+}
+.row-dark{
+    background-color: c.$background2;
+    color: #fff;
+
+}
+.current-league{
+    color: c.$ball !important;
+    font-weight: bold;
+}

@@ -1,0 +1,22 @@
+@mixin setFont($weight:bold, $family:inherit, $size:inherit, $color:inherit){
+    font: {
+        weight:$weight;
+        family:$family;
+        size: $size;
+    }
+    color:$color;
+}
+
+@mixin addPseudo($name: 'before', $pos:absolute,$top:0,$left:0, $width:100%, $height:0px, $bc, $display:block){
+    &:#{$name}{
+        content: '';
+        position: $pos;
+        width: $width;
+        height: $height;
+        background-color: $bc;
+        top:$top;
+        left: $left;
+        display: $display;
+    }
+
+}

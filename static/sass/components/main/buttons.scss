@@ -1,0 +1,47 @@
+@use '../../variables/colors' as c;
+.btn{
+    padding: .5rem 1rem;
+    border-radius: .4rem;
+    border: none;
+    &:hover{
+        cursor: pointer;
+        opacity: .9;
+    }
+}
+.from-submit-btn{
+    @extend .btn;
+    background-color: c.$background2;
+    color:white;
+}
+.logout-btn{
+    @extend .btn;
+    background-color: transparent;
+    border: none;
+    text-transform: uppercase;
+    font-size: inherit;
+    transition: box-shadow .2s linear;
+    &:hover{
+        box-shadow: 0 0 4px c.$ball;
+    }
+}
+.arrow-left{
+    @extend .btn;
+    height: min-content;
+    font-size: 30px;
+    background-color: transparent;
+    padding: 0;
+    transition: opacity .2s ease-out;
+    &:hover{
+        opacity:.7;
+    }
+}
+.arrow-right{
+    @extend .arrow-left;
+}
+
+.league-choose-btn{
+    @extend .btn;
+    background-color: c.$background2;
+    color:white;
+    border: 2px solid black;
+}

@@ -1,0 +1,127 @@
+@use '../../../mixins/mixins' as mix;
+@use '../../../variables/colors' as c;
+.header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;   
+    gap:2rem;
+}
+.logo{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:.2rem;
+    background-color: c.$background2;
+    color:white;
+    padding: 2rem 0;
+    .shortcut{
+        font-size: 2rem;
+        letter-spacing: 2px;
+        font-weight: 600;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .long-version{
+        font-size: 20px;
+        letter-spacing: 1px;
+        font-weight: 400;
+    }
+    .logo-img{
+        width: 50px;
+        height: 50px;
+    }
+}
+.nav{
+    width: 100%;
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 5;
+}
+ul{
+    padding: 0;
+    margin: 0;
+}
+.nav-list-left{
+    margin-left: 1rem;
+    list-style-type:none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    display: flex;
+    flex-direction: row;
+    i{
+        margin-right: .5rem;
+    }
+}
+.nav-list-right{
+    @extend .nav-list-left;
+    margin-right: 1rem;
+}
+.nav-item{
+    position: relative;
+    &:hover .sub-menu{
+        scale: 1;
+        z-index: 5;
+       
+    }
+}
+.nav-link{
+    padding:.4rem 0;
+    padding-right: 1rem;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    &:hover{
+        opacity: .9;
+        cursor: pointer;
+    }
+    @include mix.addPseudo($top:calc(100% - .3rem) ,$bc:c.$ball, $width:100%);
+    &::before{
+        padding:1px 0;
+        scale: 0;
+        transition: scale .1s linear;
+    }
+    &:hover::before{
+        scale:1;
+    }
+
+}
+.nav-link-active{
+    &::before{
+        scale: 1;
+    }
+}
+.sub-menu{
+    display: flex;
+    list-style-type: none;
+    z-index: 3;
+    position: absolute;
+    flex-direction: column;
+    font-size: 17px;
+    width: 100%;
+    gap: .5rem;
+    box-shadow: 0 0 6px rgba(black, .3);
+    transition: scale .15s linear;
+    scale: 0;
+    transform-origin: top center;
+    background-color: white;
+    
+}
+.sub-menu-link{
+    padding:.4rem 0;
+    padding-right: 1rem;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    &:hover{
+        opacity: .9;
+        cursor: pointer;
+        background-color: rgb(232, 221, 221);
+
+    }
+}

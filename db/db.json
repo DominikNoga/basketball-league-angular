@@ -1,0 +1,137 @@
+{
+  "users": [
+    {
+      "id": 1591486951,
+      "name": "Dominik",
+      "lastName": "Noga",
+      "email": "dominik.noga2001@gmail.com",
+      "password": "haslo",
+      "role": "player"
+    },
+    {
+      "id": 75718,
+      "name": "Marek",
+      "lastName": "Archimedes",
+      "email": "m@a.pl",
+      "password": "haslo",
+      "role": "player"
+    }
+  ],
+  "teams": [
+    {
+      "id": 2,
+      "name": "Fibonacci",
+      "short": "FIB",
+      "league": 1,
+      "wins": 4,
+      "losses": 0,
+      "points": 8
+    },
+    {
+      "id": 1,
+      "name": "Włoska Robota",
+      "short": "WR",
+      "league": 1,
+      "wins": 3,
+      "losses": 1,
+      "points": 7
+    },
+    {
+      "id": 3,
+      "name": "Ratatuj",
+      "short": "RAT",
+      "league": 1,
+      "wins": 1,
+      "losses": 3,
+      "points": 5
+    },
+    {
+      "id": 4,
+      "name": "Stonks",
+      "short": "STK",
+      "league": 1,
+      "wins": 0,
+      "losses": 4,
+      "points": 4
+    },
+    {
+      "id": 5,
+      "name": "Amatorzy",
+      "short": "AMT",
+      "league": 1,
+      "wins": 0,
+      "losses": 0,
+      "points": 0
+    }
+  ],
+  "games": [
+    {
+      "id": "1",
+      "team1": 1,
+      "team2": 2,
+      "gameDate": "2023-01-21T18:30",
+      "t1Points": 114,
+      "t2Points": 125
+    },
+    {
+      "id": "2",
+      "team1": 2,
+      "team2": 3,
+      "gameDate": "2023-03-11T20:45"
+    },
+    {
+      "id": "3",
+      "team1": 2,
+      "team2": 4,
+      "gameDate": "2023-02-27T19:30"
+    },
+    {
+      "id": "4",
+      "team1": 4,
+      "team2": 3,
+      "gameDate": "2023-02-19T18:00",
+      "t1Points": 62,
+      "t2Points": 68
+    },
+    {
+      "id": "5",
+      "team1": 1,
+      "team2": 3,
+      "gameDate": "2023-03-03T21:30"
+    },
+    {
+      "id": "6",
+      "team1": 1,
+      "team2": 4,
+      "gameDate": "2023-02-03T19:30",
+      "t1Points": 101,
+      "t2Points": 63
+    },
+    {
+      "id": "7",
+      "team1": 5,
+      "team2": 4,
+      "gameDate": "2023-04-22T19:30"
+    },
+    {
+      "id": "8",
+      "team1": 1,
+      "team2": 5,
+      "gameDate": "2023-02-03T19:30",
+      "t1Points": 77,
+      "t2Points": 54
+    },
+    {
+      "id": "9",
+      "team1": 2,
+      "team2": 5,
+      "gameDate": "2023-03-09T19:30"
+    }
+  ],
+  "leagues": [
+    {
+      "id": 1,
+      "name": "I League"
+    }
+  ]
+}
