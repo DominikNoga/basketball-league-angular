@@ -3,7 +3,6 @@ myApp.config(['$routeProvider', function($routeProvider){
     $routeProvider
         .when("/home", {
             templateUrl:'views/home.html',
-            controller: 'HomeController'
         })
         .when("/register", {
             templateUrl:'views/register.html',
@@ -30,25 +29,7 @@ myApp.config(['$routeProvider', function($routeProvider){
             redirectTo: '/home'
         })
 }]);
-myApp.factory('apiService', function($http) {
-    const apiService = {
-        getGames: function(){
-            return $http.get(`${basicUrl}/games`)
-                
-        },
-        getTeams: function(){
-            return $http.get(`${basicUrl}/teams`)
-        },
-        getTeam: function(id){
-            return $http.get(`${basicUrl}/teams/${id}`)
-        }
-    }
-    return apiService;
-})
 myApp.controller("MainController", ["$scope", "$location", function($scope, $location){
-    
-    localStorage.getItem("user") !== undefined ? $scope.isLogged = true : $scope.isLogged = false;
-    // why do i have to restart after user is logged in?
     $scope.logout = () =>{
         localStorage.removeItem("user");
         $scope.isLogged = false;

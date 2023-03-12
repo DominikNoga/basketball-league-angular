@@ -172,7 +172,6 @@ button:disabled:hover {
 }
 .league-table-section {
   margin-top: 5rem;
-  border-radius: 1rem;
   padding: 0.5rem;
 }
 
@@ -224,6 +223,26 @@ button:disabled:hover {
 .current-league {
   color: rgb(255, 166, 0) !important;
   font-weight: bold;
+}
+
+.league-table-row.ng-enter, .ng-enter.league-table-row-title {
+  transition: scale 0.3s ease-in-out;
+  will-change: scale;
+  scale: 0;
+}
+
+.league-table-row.ng-enter.ng-enter-active, .ng-enter.ng-enter-active.league-table-row-title {
+  scale: 1;
+}
+
+.league-table-row.ng-laeve, .ng-laeve.league-table-row-title {
+  transition: scale 0.3s ease-in-out;
+  will-change: scale;
+  scale: 1;
+}
+
+.league-table-row.ng-leave.ng-leave-active, .ng-leave.ng-leave-active.league-table-row-title {
+  scale: 0;
 }
 
 .stats-and-standings {
@@ -729,7 +748,6 @@ ul {
     opacity: 1;
   }
 }
-.standings-section{
-  width: max(70%, 400px);
-  margin: 2rem auto;
+.standings-section {
+  width: min(1000px, 90%);
 }

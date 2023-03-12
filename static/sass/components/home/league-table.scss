@@ -51,3 +51,19 @@
     color: c.$ball !important;
     font-weight: bold;
 }
+.league-table-row.ng-enter{
+    transition: scale .3s ease-in-out;
+    will-change: scale;
+    scale: 0;
+}
+.league-table-row.ng-enter.ng-enter-active{
+    scale: 1;
+}
+.league-table-row.ng-laeve{
+    transition: scale .3s ease-in-out;
+    will-change: scale;
+    scale: 1;
+}
+.league-table-row.ng-leave.ng-leave-active{
+    scale: 0;
+}
